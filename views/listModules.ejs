@@ -1,0 +1,36 @@
+<h1>Modules</h1>
+<style>
+    table, th, td {
+        border: 1px solid black
+    }
+</style>
+<table>
+    <tr>
+    <th>Module ID</th>
+    <th>Name</th>
+    <th>Credits</th>
+    <th>Update</th>
+    <th>Students</th>
+    </tr>
+    <% modules.forEach((module) =>
+    { %>
+        
+    <% if (errors != undefined) { %>
+        <ul>
+            <% errors.forEach((error) => { %>
+                <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+
+    <tr>
+    <td><%= module.mid %></td>
+    <td><%= module.name %></td>
+    <td><%= module.credits %></td>
+    <td><a href = <%= "/module/edit/" + module.mid %>>Update</a></td>
+    <td><a href = <%= "/module/students/" + module.mid %>>List</a></td>
+    </tr>
+    <% }) %>
+    </table>
+    <a href='/'>Home</a>

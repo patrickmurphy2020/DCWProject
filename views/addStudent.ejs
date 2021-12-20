@@ -1,0 +1,28 @@
+<body>
+    <h1>Add Student</h1>
+
+    <ul>
+        <li>Student ID must be 4 characters</li>
+        <li>Name must be at least 5 characters</li>
+        <li>GPA must be between 0.0 & 4.0</li>
+    </ul>
+
+    <% if (errors != undefined) { %>
+        <ul>
+            <% errors.forEach((error) => { %>
+            <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+        <% } %>
+
+    <form action="/addStudent" method="POST">
+        <label>Student ID:</label>
+        <input type="text" name="sid"><br>
+        <label>Name</label>
+        <input type="text" name="sName"><br>
+        <label>GPA</label>
+        <input type="text" name="gpa" ><br>
+        <input type="submit" value="OK">
+    </form>
+    <a href='/'>Home</a>
+</body>

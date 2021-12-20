@@ -1,0 +1,24 @@
+<body>
+    <h1>Add Lecturer</h1>
+
+    <ul>
+        <li>Lecture ID must be 4 characters</li>
+        <li>Name must be at least 5 characters</li>
+        <li>Dept must be 3 characters</li>
+    </ul>
+
+    <% if (IDError != undefined) { %>
+        <p><%= IDError %></p>
+    <% } %>
+
+
+    <form action="/addLecturer" method="POST">
+        <label>Lecturer ID:</label>
+        <input type="text" name="_id"><br>
+        <label>Name</label>
+        <input type="text" name="name"><br>
+        <label>Dept</label>
+        <input type="text" name="dept"><br>
+        <input type="submit" value="OK">
+    </form>
+</body>

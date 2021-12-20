@@ -1,0 +1,26 @@
+<h1>Lecturers</h1>
+<button onclick="location.href = 'addLecturer'">Add Lecturer</button>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Dept</th>
+    </tr>
+    <% allData.forEach((oneData) =>
+{ %>
+    <tr>
+        <td><%= oneData._id %></td>
+        <td><%= oneData.name %></td>
+        <td><%= oneData.dept %></td>
+    </tr>
+    <% }) %>
+</table>
+<a href='/'>Home</a>
